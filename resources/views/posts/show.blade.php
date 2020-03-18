@@ -11,4 +11,10 @@
     <small>Written on {{$post->created_at}}</small>
     <hr>
     <a href="../posts/{{$post->id}}/edit" class="btn btn-default">Edit</a>
+
+    <form method="post" action="/LaravelProjectDemo/public/posts/{{$post->id}}">
+        {{ csrf_field() }}
+        <button type="submit" class="btn btn-danger">Delete post</button>
+        {{ method_field('DELETE') }}
+    </form>
 @endsection
