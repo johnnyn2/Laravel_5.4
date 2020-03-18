@@ -14,11 +14,21 @@
                 font-family: Raleway;
             }
         </style>
+        
     </head>
     <body>
         @include('inc/navbar')
         <div class="container" style="padding-top: 56px;">
             @yield('content')
+            @include('inc/messages')
         </div>
+
+        <!-- TinyMCE Editor -->
+        <script src='https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#tinymce-body'
+            });
+        </script>
     </body>
 </html>
